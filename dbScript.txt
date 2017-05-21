@@ -1,0 +1,10 @@
+CREATE DATABASE books;
+use books
+
+CREATE TABLE authors (id INT, name VARCHAR(20), email VARCHAR(20));
+
+INSERT INTO authors (id,name,email) VALUES(1,"Vivek","xuz@abc.com");
+INSERT INTO authors (id,name,email) VALUES(18,"Basant","basant@dev.com");
+INSERT INTO authors (id,name,email) VALUES(57,"Rabindra","Rabindra@gmail.com");
+INSERT INTO authors (id,name,email) VALUES(68,"Santosh","Santosh@domain.com");
+

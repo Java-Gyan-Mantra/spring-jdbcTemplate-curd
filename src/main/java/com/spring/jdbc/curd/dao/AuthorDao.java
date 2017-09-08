@@ -44,4 +44,17 @@ public class AuthorDao {
 		template.execute(sql);
 		return "Record Deleted .";
 	}
+	
+		// it will return all data from table with column name as key and value as
+	// columndata
+	public List<Map<String, Object>> useResultSetMetaData() {
+		String SQL = "SELECT * FROM AUTHORS";
+		return template.queryForList(SQL);
+
+	}
+
+	public List<String> getEmails() {
+		String SQL = "Select EMAIL from AUTHORS";
+		return template.queryForList(SQL, String.class);
+	}
 }

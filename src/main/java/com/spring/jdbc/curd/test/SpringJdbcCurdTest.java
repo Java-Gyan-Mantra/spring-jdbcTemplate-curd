@@ -21,5 +21,9 @@ public class SpringJdbcCurdTest {
 		System.out.println(service.getAuthors());
 		// Delete Record
 		System.out.println(service.delete(444));
+		
+		System.out.println(service.getEmails());
+		
+		System.out.println(service.getMetaDataCount());
 	}
 }

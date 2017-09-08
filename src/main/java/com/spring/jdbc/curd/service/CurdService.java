@@ -28,4 +28,11 @@ public class CurdService {
 	public String delete(int id) {
 		return dao.deleteAuthor(id);
 	}
+		public List<String> getEmails() {
+		return dao.getEmails();
+	}
+
+	public List<Map<String, Object>> getMetaDataCount() {
+		return dao.useResultSetMetaData();
+	}
 }

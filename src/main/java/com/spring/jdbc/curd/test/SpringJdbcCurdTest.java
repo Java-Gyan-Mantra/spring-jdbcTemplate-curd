@@ -25,5 +25,7 @@ public class SpringJdbcCurdTest {
 		System.out.println(service.getEmails());
 		
 		System.out.println(service.getMetaDataCount());
+		
+		System.out.println(service.useMetaDataQuery());
 	}
 }

@@ -57,4 +57,25 @@ public class AuthorDao {
 		String SQL = "Select EMAIL from AUTHORS";
 		return template.queryForList(SQL, String.class);
 	}
+	
+       public List<Map<String, Object>> useMetaDataQuery() {
+		String SQL = "SELECT * FROM AUTHORS";
+		List<Map<String, Object>> recordList = null;
+		recordList = template.query(SQL, new RowMapper<Map<String, Object>>() {
+
+			@Override
+			public Map<String, Object> mapRow(ResultSet rs, int index)
+					throws SQLException {
+				Map<String, Object> recordMap = new HashMap<>();
+				ResultSetMetaData metaData = rs.getMetaData();
+				int columnCount = metaData.getColumnCount();
+				for (int i = 1; i <= columnCount; i++) {
+					String columnName = metaData.getColumnName(i);
+					recordMap.put(columnName, rs.getObject(columnName));
+				}
+				return recordMap;
+			}
+		});
+		return recordList;
+	}
 }

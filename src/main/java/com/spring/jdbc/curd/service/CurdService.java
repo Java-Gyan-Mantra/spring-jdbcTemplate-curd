@@ -35,4 +35,7 @@ public class CurdService {
 	public List<Map<String, Object>> getMetaDataCount() {
 		return dao.useResultSetMetaData();
 	}
+	public List<Map<String, Object>> useMetaDataQuery() {
+		return dao.useMetaDataQuery();
+	}
 }
